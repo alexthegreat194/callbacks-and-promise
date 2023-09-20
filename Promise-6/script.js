@@ -31,13 +31,13 @@ navigator.geolocation.getCurrentPosition(onsuccess, onerror, options);
 
 function getGeolocation(options) {
   return new Promise( (resolve, reject) => {
-    
+    navigator.geolocation.getCurrentPosition(resolve, reject, options)
   } )
 }
 
 // Like this: 
 
 getGeolocation(options)
-  .then(pos => { })
-  .catch(err => { })
+  .then(pos => console.log(pos))
+  .catch(err => console.log(err))
 

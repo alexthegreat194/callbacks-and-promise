@@ -1,9 +1,12 @@
 const food = new Promise((resolve, reject) => {
-  
+  resolve('pizza')
 })
 
 
 // resolve food here: 
+food.then((message) => {
+    console.log(message)
+});
 
 
 

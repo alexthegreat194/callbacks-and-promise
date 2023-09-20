@@ -37,9 +37,21 @@ greet('Your name') // Returns a Promise
 
 // Challenges: get greet() to fail by passing a non string value
 // What happens? 
+greet(5)
+  .then(str => uppercaser(str))  
+  .catch(err => console.log(err)) 
+
+// it prints "Greet expects a string!"
 
 // Challenge: get uppercaser() to fail by passing a non string value
 // What happens? 
+greet('Your name')
+  .then(str => uppercaser(5))
+  .catch(err => console.log(err))
+
+// it prints "Argument to uppercaser must be string"
 
 // Challenge: Notice there is only a single .catch() at the end. 
 // Explain the behavior?
+
+// it catches any error that occurs in the chain of promises
